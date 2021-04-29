@@ -1,0 +1,12 @@
+<h1>Author Details :</h1>
+<div data-sly-use.author="com.aem.sample.core.models.MultifieldComponent"></div>
+<ul data-sly-list.item="${author.info}">
+<li>Author Name:${item.fullName}</li>
+<li>Date of Birth:${item.dateOfBirth}</li>
+<li>Password:${item.password}</li>
+<li>Is Married:${item.married}</li>
+<li>Favorite Color:${item.color}</li>
+<li>Experience:${item.experience}</li>
+<li>Path Browser:${item.pathBrowser}</li>
+<li>Nationality:${item.country}</li>
+</ul>

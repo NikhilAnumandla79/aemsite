@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="proxyName"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <country
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Country"
+                        name="./country"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <v2
+                                jcr:primaryType="cq:Widget"
+                                text="China"
+                                value="China"/>
+                            <v1
+                                jcr:primaryType="nt:unstructured"
+                                text="India"
+                                value="India"/>
+                        </options>
+                    </country>
+                    <gender
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Gender"
+                        name="./gender"
+                        text="Gender"
+                        xtype="radiogroup">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <male
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="male"
+                                name="./type"
+                                value="male"
+                                xtype="radio"/>
+                            <female
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="female"
+                                name="./type"
+                                value="female"
+                                xtype="radio"/>
+                            <other
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="other"
+                                name="./type"
+                                value="other"
+                                xtype="radio"/>
+                        </items>
+                    </gender>
+                    <married
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

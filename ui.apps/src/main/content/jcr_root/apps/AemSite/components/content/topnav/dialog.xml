@@ -9,7 +9,9 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="Tab 1"/>
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection"/>
+            </tab1>
         </items>
     </items>
 </jcr:root>

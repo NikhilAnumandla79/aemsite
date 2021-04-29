@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multi field"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <nav
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldDescription="Click '+' to add a new link"
+                        fieldLabel="Links"
+                        name="./multi">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./items">
+                            <items jcr:primaryType="nt:unstructured">
+                                <linkText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Full Name"
+                                    name="./fullName"/>
+                                <linkurl
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="Date of Birth"
+                                    name="./dateOfBirth"/>
+                                <passwordField
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/password"
+                                    fieldLabel="Password"
+                                    name="./password"/>
+                                <Switch
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/switch"
+                                    fieldLabel="Is Married"
+                                    name="./married"/>
+                                <UserPicker
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/userpicker"
+                                    fieldLabel="User Picker Field"
+                                    name="./user"/>
+                                <ColorPicker
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                    fieldLabel="Favorite Color"
+                                    name="./color"/>
+                                <columnWidth
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    defaultValue="4"
+                                    fieldLabel="Experience"
+                                    max="12"
+                                    min="1"
+                                    name="./experience"
+                                    step="1"/>
+                                <buttonPath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                    emptyText="Path to target page"
+                                    fieldLabel="Path Browser"
+                                    name="./pathBrowser"
+                                    rootPath="/content/"/>
+                                <country
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Select Nationality"
+                                    name="./country">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <v1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="India"
+                                            value="India"/>
+                                        <v2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="China"
+                                            value="China"/>
+                                        <v3
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Bangladesh"
+                                            value="Bangladesh"/>
+                                    </items>
+                                </country>
+                                <alignment
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
+                                    fieldLabel="Alignment of components"
+                                    name="./alignChildren"
+                                    required="{Boolean}true"
+                                    selectionMode="single">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-msm-lockable="default"
+                                            name="./default"
+                                            text="Default"
+                                            value="false"/>
+                                        <left
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-msm-lockable="left"
+                                            name="./left"
+                                            text="Left"
+                                            value="left"/>
+                                        <center
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-msm-lockable="center"
+                                            name="./center"
+                                            text="Center"
+                                            value="center"/>
+                                        <right
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-msm-lockable="right"
+                                            name="./right"
+                                            text="Right"
+                                            value="right"/>
+                                    </items>
+                                </alignment>
+                                <fileupload
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Files"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <file
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fileupload"
+                                            autoStart="{Boolean}true"
+                                            cq-msm-lockable="/file"
+                                            fieldLabel="Upload files"
+                                            mimeTypes="[image/png,image/jpeg,application/pdf]"
+                                            multiple="{Boolean}false"
+                                            name="./file"
+                                            sizeLimit="100000000"
+                                            text="Upload file"
+                                            uploadUrl="/content/dam/someurl"
+                                            uploadUrlBuilder=""/>
+                                    </items>
+                                </fileupload>
+                                <columnLast
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    name="./columnLast"
+                                    text="Last column in grid?"
+                                    value="true"/>
+                            </items>
+                        </field>
+                    </nav>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

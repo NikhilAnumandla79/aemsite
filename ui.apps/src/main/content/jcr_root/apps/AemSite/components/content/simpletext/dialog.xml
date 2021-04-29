@@ -9,7 +9,49 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="Tab 1"/>
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <firstName
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="First Name"
+                        name="./firstName"
+                        xtype="textfield"/>
+                    <lastName
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Last Name"
+                        name="./lastName"
+                        xtype="textfield"/>
+                    <married
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Check if you are married"
+                        fieldLabel="Is Married"
+                        name="./isMarried"
+                        type="checkbox"
+                        value="{Boolean}true"
+                        xtype="selection"/>
+                    <genderType
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Gender"
+                        name="./gender"
+                        type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <male
+                                jcr:primaryType="cq:Widget"
+                                text="male"
+                                value="male"/>
+                            <female
+                                jcr:primaryType="cq:Widget"
+                                text="female"
+                                value="female"/>
+                            <other
+                                jcr:primaryType="cq:Widget"
+                                text="other"
+                                value="other"/>
+                        </options>
+                    </genderType>
+                </items>
+            </tab1>
         </items>
     </items>
 </jcr:root>

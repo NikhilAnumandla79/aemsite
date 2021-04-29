@@ -33,6 +33,19 @@
                 <artifactId>sling-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                	<instructions>
+                		<Sling-Model-Packages>
+                			com.aem.sample.core
+                		</Sling-Model-Packages>
+                	</instructions>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-maven-plugin</artifactId>
                 <executions>

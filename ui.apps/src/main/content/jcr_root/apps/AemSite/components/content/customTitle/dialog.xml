@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="titleDialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <fullName
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Full Name"
+                        name="./fullName"
+                        xtype="textfield"/>
+                    <country
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Select Country"
+                        name="./country"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <v1
+                                jcr:primaryType="cq:Widget"
+                                text="India"
+                                value="India"/>
+                            <v2
+                                jcr:primaryType="cq:Widget"
+                                text="China"
+                                value="China"/>
+                            <v3
+                                jcr:primaryType="cq:Widget"
+                                text="USA"
+                                value="USA"/>
+                        </options>
+                    </country>
+                    <optional
+                        jcr:primaryType="cq:Widget"
+                        collapsed="{Boolean}true"
+                        collapsible="{Boolean}true"
+                        title="Address"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <Address
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Address"
+                                name="./address"
+                                xtype="textarea"/>
+                        </items>
+                    </optional>
+                    <Multi-field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceSuperType="granite/ui/components/foundation/form/multifield"
+                        fieldDescription="add new field"
+                        fieldLabel="Multifield">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="granite/ui/components/foundation/form/textfield"
+                            name="./field"
+                            required="{Boolean}true"/>
+                    </Multi-field>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

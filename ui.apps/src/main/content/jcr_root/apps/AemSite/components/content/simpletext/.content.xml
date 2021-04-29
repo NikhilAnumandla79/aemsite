@@ -3,4 +3,4 @@
     jcr:description="this is a Simple Text Component"
     jcr:primaryType="cq:Component"
     jcr:title="simpletext"
-    componentGroup="Aemsite"/>
+    componentGroup="aemsite"/>

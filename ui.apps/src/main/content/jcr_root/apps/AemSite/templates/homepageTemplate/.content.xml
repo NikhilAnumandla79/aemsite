@@ -2,10 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:description="AemSite Website Homepage Template"
     jcr:primaryType="cq:Template"
-    jcr:title="Home Page Template"
-    allowedPaths="[/content(/.)?]"
+    jcr:title="Home Page Template -Project Templates"
+    allowedPaths="[/content/AemSite/.+]"
     ranking="{Long}1">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="AemSite/components/content"/>
+        sling:resourceType="AemSite/components/structure/page"/>
 </jcr:root>

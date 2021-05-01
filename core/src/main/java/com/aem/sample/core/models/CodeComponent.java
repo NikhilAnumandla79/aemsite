@@ -5,33 +5,36 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
-import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-@Model(adaptables=SlingHttpServletRequest.class,
+@Model(adaptables=Resource.class,
 defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 public class CodeComponent {
-	@ValueMapValue
+	@Inject
 	List<String> names;
 	
-	@ValueMapValue
+	@Inject
+	@Default(values="default")
 	String country;
 	
-	@ValueMapValue
+	@Inject
+	@Default(values="default")
 	String pathBrowser;
 	
-	@ValueMapValue
+	@Inject
 	@Default(values="{Boolean}false")
 	boolean isMarried;
 	
-	@ValueMapValue
+	@Inject
+	@Default(values="default")
 	String fileReference;
 	
-	@PostConstruct
+	
 	public String getCountry() {
 		return country;
 	}

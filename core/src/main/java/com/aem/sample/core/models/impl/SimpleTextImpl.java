@@ -11,11 +11,13 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.ResourcePath;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+import com.aem.sample.core.components.UserComponent;
 import com.aem.sample.core.models.SimpleText;
 import com.day.cq.wcm.api.Page;
 
@@ -72,6 +74,8 @@ public class SimpleTextImpl implements SimpleText{
 		return lastName;
 
 	}
+	@OSGiService
+	UserComponent userComponent;
 	
 	@PostConstruct
 	public String getGender() {
@@ -95,5 +99,8 @@ public class SimpleTextImpl implements SimpleText{
 	}
 	public String getHomePagePath() {
 		return resource.getPath();
+	}
+	public String getUserName() {
+		return userComponent.getUserName();
 	}
 }

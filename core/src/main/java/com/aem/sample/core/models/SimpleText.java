@@ -9,4 +9,5 @@ public interface SimpleText {
 	String getTestAttribute();
 	String getHomePagePath();
 	String getLastModified();
+	String getUserName();
 }

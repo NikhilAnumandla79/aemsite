@@ -146,5 +146,63 @@ public class CSVFileReaderImpl implements CSVFileReader{
 		}
 		return createdPages.size();
 	}
-	
+	public int createPagesWithCSVFileDemo() {
+		resource = resolver.getResource("/content/dam/AemSite/en/sampleFiles/csv-content.csv");
+		Asset asset = resource.adaptTo(Asset.class);
+		Rendition rendition = asset.getOriginal();
+		InputStream inputStream = rendition.adaptTo(InputStream.class);
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+		Session session = resolver.adaptTo(Session.class);
+		
+		
+		
+		String line = "";
+		List<Page> createdPages = new ArrayList<Page>();
+		PageManager pageManager = resolver.adaptTo(PageManager.class);
+		try {
+			br.readLine();
+			while((line = br.readLine())!=null) {
+				String[] pageData = line.split(",");
+				
+				
+				String pageParent = "/content/AemSite/en/demo-page";
+				String pageDescription = pageData[3].trim();
+				String pageTitle = pageData[2].trim();
+				String pageTemplate = "/conf/AemSite/settings/wcm/templates/homepage-template";
+				String pageName = pageData[0].trim().replace(' ', '-');
+				Page page = pageManager.create(pageParent, pageName, pageTemplate, pageTitle);
+				
+				Node node;
+				try {
+					node = (Node) session.getItem(page.getPath()+"/jcr:content");
+			
+					
+					if(node!=null) {
+						logger.info(node.getName());
+						node.setProperty("jcr:description", pageDescription);
+						node.setProperty("pageTitle", pageTitle);
+						node.setProperty("navTitle", "nav "+pageTitle);
+						session.save();
+					}else {
+						logger.info("Node is null");
+					}
+					
+				} catch (PathNotFoundException e) {
+					e.printStackTrace();
+				} catch (RepositoryException e) {
+					e.printStackTrace();
+				}
+			
+			
+				createdPages.add(page);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (WCMException e) {
+			logger.info(e.getMessage());
+			logger.info(e.toString());
+			
+		}
+		return createdPages.size();
+	}
 }

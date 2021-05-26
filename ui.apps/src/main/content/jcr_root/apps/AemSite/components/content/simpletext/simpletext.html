@@ -1,3 +1,6 @@
+<div data-sly-use.clientlibs="/libs/granite/sightly/templates/clientlib.html"></div>
+<div data-sly-call="${clientlibs.all @ categories='cmp-simpletext'}"></div>
+<div class="simpletext p-5">
 <h1>Simple Text</h1>
 <div data-sly-use.simpleText = "${'com.aem.sample.core.models.SimpleText' @ testAttribute='Test Attribute'}" ></div>
 <div>First Name : ${simpleText.firstName}</div>
@@ -9,4 +12,5 @@
 <div>Resource : ${simpleText.homePagePath}</div>
 <div>Last Modified : ${simpleText.lastModified}</div>
 <div>UserName : ${simpleText.userName}</div>
+</div>
 

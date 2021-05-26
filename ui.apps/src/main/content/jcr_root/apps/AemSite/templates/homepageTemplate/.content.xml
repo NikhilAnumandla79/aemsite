@@ -6,6 +6,9 @@
     allowedPaths="[/content/AemSite/.+]"
     ranking="{Long}1">
     <jcr:content
+        cq:lastReplicated="{Date}2021-05-20T22:12:25.866+05:30"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="AemSite/components/structure/page"/>
 </jcr:root>

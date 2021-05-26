@@ -1,3 +1,8 @@
-<p> This is sample custom footer</p>
-<h3>footer</h3>
-<p>This is sample custom footer</p>
+<div data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" ></div>
+<div data-sly-call="${clientlib.all @ categories='cmp-footer'}"></div>
+
+<div class="cmp-footer text-center bg-dark p-5">
+<p>${'footer-mesg' @ i18n, content='html'}</p>
+<h3>${'copyright' @ i18n, content='html'}</h3>
+<p>${'footer-mesg' @ i18n, content='html'}</p>
+</div>

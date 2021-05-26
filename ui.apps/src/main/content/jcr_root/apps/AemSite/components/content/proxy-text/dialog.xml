@@ -8,15 +8,7 @@
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="Tab 1">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <url
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Enter Title"
-                        name="./title"
-                        xtype="textfield"/>
-                </items>
-            </tab1>
+                title="Tab 1"/>
         </items>
     </items>
 </jcr:root>

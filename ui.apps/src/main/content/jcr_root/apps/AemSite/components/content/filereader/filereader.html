@@ -1,0 +1,20 @@
+<h1>File Reader</h1>
+<div data-sly-use.simpleText = "com.aem.sample.core.models.TestModel" ></div>
+<div>${simpleText.pathReference}</div>
+------------------------------------------------------------------------------
+<div>${simpleText.data}</div>
+------------------------------------------------------------------------------
+<ul data-sly-list.item="${simpleText.dataAsList}">
+	<li>${item}</li>
+</ul>
+------------------------------------------------------------------------------
+<ul data-sly-list.item="${simpleText.dataAsListObj}">
+	<li>${item.name}</li>
+</ul>
+------------------------------------------------------------------------------
+<div>${simpleText.pagePath}</div>
+------------------------------------------------------------------------------
+<ol data-sly-list.item="${simpleText.pageInfo}">
+        <li>${item}</li>
+ </ol>
+------------------------------------------------------------------------------

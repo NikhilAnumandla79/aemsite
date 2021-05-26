@@ -26,13 +26,11 @@ public class CSVReader extends SlingSafeMethodsServlet{
 	
 	@Override
 	public void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse res) throws IOException {
-		int totalPagesCreated = csvFileReader.createPagesWithCSVFile();
+		int totalPagesCreated = csvFileReader.createPagesWithCSVFileInc();
 		logger.info("==================================================");
 		logger.info(totalPagesCreated + " pages created successfully");
 //		res.sendRedirect("/content/AemSite/en/firstpage.html");
 		res.getWriter().write(totalPagesCreated + " pages created successfully");
 	}
 	
-	
-
 }
